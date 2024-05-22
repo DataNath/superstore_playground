@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_customer_returns
+    description: "Gathers each returned order_id"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        data_tests:
+          - not_null
+
+  - name: stg_customer_sales
+    description: "Shows order-level sales detail"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        data_tests:
+          - not_null
+      - name: customer_id
+        description: "Customer's ID"
+        data_tests:
+          - not_null
+      - name: customer_name
+        description: "Customer's name"
+        data_tests:
+          - not_null
+      - name: sales
+        description: "Sale value"
+        data_tests:
+          - not_null
+
+  - name: returned_sales
+    description: "Total returned sales per customer"
+    columns:
+      - name: customer_name
+        description: "Customer's name"
+      - name: total
+        description: "Total returns value"

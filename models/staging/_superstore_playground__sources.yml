@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: superstore_playground
+    database: postgres
+    schema: dbt_npurvis
+    tables:
+      - name: superstore_orders
+      - name: superstore_people
+      - name: superstore_returns
