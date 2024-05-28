@@ -16,7 +16,7 @@ returns as (
 
 select
     customer_name,
-    sum(sales) as total
+    sum({{dollars_to_cents('sales')}}) as total
 from
     sales
 inner join
